@@ -8,7 +8,7 @@
 (defun cs-yank-pop-forward ()
   (interactive)
   (yank-pop -1))
-(global-set-key (kbd "M-u") 'yank-pop-forward)
+(global-set-key (kbd "M-u") 'cs-yank-pop-forward)
 
 ;; Unbind Pesky Sleep Button
 (global-unset-key [(control z)])
