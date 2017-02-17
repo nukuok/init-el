@@ -17,3 +17,9 @@
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 98 42 115 99 114 97 116 99 104 42 return] 0 "%d")) arg)))
 
 (global-set-key (kbd "C-c s") 'to-scratch)
+
+(defun insert-backslash ()
+  (interactive)
+  (insert "\\"))
+
+(global-set-key (kbd "C-c _") 'insert-backslash)

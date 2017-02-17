@@ -56,3 +56,9 @@
   (interactive)
   (insert
 "find ./ -type f | xargs grep "))
+
+
+(add-hook
+ 'eshell-mode-hook
+ (lambda ()
+   (setq pcomplete-cycle-completions nil)))

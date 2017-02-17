@@ -13,6 +13,11 @@
   (insert
    "git status"))
 
+(defun gitb ()
+  (interactive)
+  (insert
+   "git branch"))
+
 (defun gitt ()
   (interactive)
   (insert

@@ -127,3 +127,26 @@ Path('index2.html').read_text()"))
 with open('') as fid:
     data = json.load(fid)"))
 
+(defun cs-py-profile ()
+  (interactive)
+  (insert
+   "import cProfile
+cProfile.run('')"))
+
+(defun cs-py-xml ()
+  (interactive)
+  (insert
+"import urllib.request
+import xml.etree.ElementTree as ET
+
+def get_xml_from_url(url):
+    response = urllib.request.urlopen(request_url).read()
+
+    save_xml = 'versions.xml'
+    with open(save_xml, 'w') as fid:
+        fid.write(response.decode())
+
+    tree = ET.parse(save_xml)
+    root = tree.getroot()
+
+    return root"))
