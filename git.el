@@ -1,7 +1,7 @@
 (defun gitc ()
   (interactive)
   (insert
-   "git commit -a -m \"update\""))
+   "git commit -a -m \"[update]\""))
 
 (defun gitp ()
   (interactive)
@@ -27,6 +27,11 @@
   (interactive)
   (insert
    "git push --tags"))
+
+(defun gitrv ()
+  (interactive)
+  (insert
+   "git remote -v"))
 
 (defun ssh ()
   (interactive)
