@@ -33,3 +33,30 @@
     xmlhttp.onreadystatechange=state_Change;
     xmlhttp.open(\"GET\", url, true);
     xmlhttp.send(null);}"))
+
+(defun cs-js-mvc ()
+  (interactive)
+  (insert
+"function OnameModel(){
+}
+
+function OnameController(){
+}
+
+function OnameView(){
+}
+
+var Oname = {
+    init: function(g){
+	this.nodeg = g;
+	OnameModel.call(this);
+	OnameController.call(this);
+	OnameView.call(this);
+    }
+}
+"))
+
+(defun cs-html-css ()
+  (interactive)
+  (insert
+"<link rel = \"stylesheet\" type = \"text/css\" href = \"\" />"))

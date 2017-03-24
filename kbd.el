@@ -23,3 +23,8 @@
   (insert "\\"))
 
 (global-set-key (kbd "C-c _") 'insert-backslash)
+
+(fset 'remove-space
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("\240" 0 "%d")) arg)))
+
+(global-set-key (kbd "C-c SPC") 'remove-space)

@@ -150,3 +150,22 @@ def get_xml_from_url(url):
     root = tree.getroot()
 
     return root"))
+
+(defun cs-py-chmod ()
+  (interactive)
+  (insert
+"import os
+import stat
+
+st = os.stat('somefile')
+os.chmod('somefile', st.st_mode | stat.S_IEXEC)"))
+
+
+(defun cs-py-register-class-method ()
+  (interactive)
+  (insert
+"def register_in_globals(function):
+    def mame(class_instance, *args, **kwargs):
+        class_instance.__getattribute__(function.__name__)(*args, **kwargs)
+    globals()[function.__name__] = mame
+    return function"))
