@@ -28,3 +28,8 @@
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("\240" 0 "%d")) arg)))
 
 (global-set-key (kbd "C-c SPC") 'remove-space)
+
+(defun cs-kb ()
+  (interactive)
+  (kill-some-buffers (remove-if '(lambda (x) (or (string-prefix-p "*" (format-message "%s" x))
+                                                 (string-prefix-p " " (format-message "%s" x)))) (buffer-list))))

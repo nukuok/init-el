@@ -6,6 +6,7 @@
  '(default ((t (:family "monospace" :foundry "outline" :slant normal :weight normal :height 120 :width normal))))
  '(cursor ((((class color) (background dark)) (:background "#00AA00")) (((class color) (background light)) (:background "#999999")) (t nil))))
 
+(require 'cl)
 (require 'package)
 
 (add-to-list 'package-archives
@@ -164,3 +165,15 @@
 
 ;; .text(function(d){ return d.hostname; })
 ;; .call(drag)
+
+;; https://github.com/purcell/exec-path-from-shell
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+;; (exec-path-from-shell-copy-env "PYTHONPATH")
+
+(desktop-save-mode 1)
+
+(if (require 'toc-org nil t)
+    (add-hook 'org-mode-hook 'toc-org-enable)
+  (warn "toc-org not found"))

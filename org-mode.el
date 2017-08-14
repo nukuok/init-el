@@ -1,4 +1,4 @@
-(setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8046/plantuml.8046.jar")
+(setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2017.13/libexec/plantuml.jar")
 
 (defun org-mode-init ()
   (org-babel-do-load-languages
