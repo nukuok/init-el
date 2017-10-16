@@ -169,3 +169,14 @@ os.chmod('somefile', st.st_mode | stat.S_IEXEC)"))
         class_instance.__getattribute__(function.__name__)(*args, **kwargs)
     globals()[function.__name__] = mame
     return function"))
+
+
+(defun cs-py-wsgi-startresponse ()
+  (interactive)
+  (insert
+"start_response('200 OK', [
+                ('Content-Type', 'application/json'),
+                ('Access-Control-Allow-Origin', 'http://localhost:8888'),
+                ('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform'),
+                ('Content-Length', str(len(response)))])"))
+

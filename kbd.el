@@ -33,3 +33,6 @@
   (interactive)
   (kill-some-buffers (remove-if '(lambda (x) (or (string-prefix-p "*" (format-message "%s" x))
                                                  (string-prefix-p " " (format-message "%s" x)))) (buffer-list))))
+
+(fset 'cs-ul-to-md
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([19 60 117 108 1 0 19 47 117 108 5 134217847 14 1 3 106 19 35 120 97 48 134217826 2 2 25 0 67108918 6 23 14 1 3 108] 0 "%d")) arg)))

@@ -25,6 +25,7 @@
       myPackages)
 
 (require 'ox-gfm)
+(require 'ox-textile)
 
 (defun split-window-and-run-shell ()
   (progn
@@ -177,3 +178,5 @@
 (if (require 'toc-org nil t)
     (add-hook 'org-mode-hook 'toc-org-enable)
   (warn "toc-org not found"))
+
+(add-hook 'c-mode-common-hook 'google-set-c-style)
